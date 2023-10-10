@@ -49,19 +49,29 @@ class Puzzle:
                     print(colored(f"{ch}", "blue"), end="")
             print()
 
-    def find_word(self):
-        for word in self.words:
-            if self.find_horizontal(word):
-                self.replace_word_with_hyphens(word)
-                self.words_found += 1  # Increment word count
-            if self.find_vertical(word):
-                self.replace_word_with_hyphens(word)
-                self.words_found += 1  # Increment word count
-            if self.find_diagonal(word):
-                self.replace_word_with_hyphens(word)
-                self.words_found += 1  # Increment word count
+    ef
+    find_word(self):
+    found_words = []  # Create a list to store found words
+    for word in self.words:
+        if self.find_horizontal(word):
+            self.replace_word_with_hyphens(word)
+            self.words_found += 1
+            found_words.append(word)  # Append found word to the list
+        if self.find_vertical(word):
+            self.replace_word_with_hyphens(word)
+            self.words_found += 1
+            found_words.append(word)
+        if self.find_diagonal(word):
+            self.replace_word_with_hyphens(word)
+            self.words_found += 1
+            found_words.append(word)
 
-    def find_horizontal(self, word):
+    print("Words found:")
+    for word in found_words:
+        print(word)
+
+
+def find_horizontal(self, word):
         for ri, row in enumerate(self.puzzle):
             if word in str(row):
                 for i in range(0, len(word)):
